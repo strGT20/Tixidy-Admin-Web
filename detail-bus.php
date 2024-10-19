@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="no_reg_bus" class="form-label">Nomor Registrasi Bus</label>
                 <input type="text" class="form-control" id="no_reg_bus" name="no_reg_bus" value="<?php echo $bus['no_reg_bus']; ?>" required>
             </div>
-            
+
             <div class="mb-3">
                 <label for="kelas_layanan" class="form-label">Kelas Layanan</label>
                 <input type="text" class="form-control" id="kelas_layanan" name="kelas_layanan" value="<?php echo $bus['kelas_layanan']; ?>" required>
@@ -106,4 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </body>
 </html>
-<?php mysqli_close($connect); ?>
+
+<?php
+include ('footer.php'); 
+mysqli_close($connect); 
+?>

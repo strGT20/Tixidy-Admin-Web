@@ -25,10 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
 
     // Bagian untuk meng-upload gambar
     $directory = "images/"; // Direktori tujuan penyimpanan gambar
-    $foto_armada = $directory . basename($_FILES["image"]["name"]); // Path lengkap dari gambar
-    move_uploaded_file($_FILES["image"]["tmp_name"], $foto_armada); // Memindahkan file yang diupload ke direktori
+    $foto_armada = $directory . basename($_FILES["image"]["name"]); // Path gambar
+    move_uploaded_file($_FILES["image"]["tmp_name"], $foto_armada); // Memindahkan file ke direktori
 
-    // Query untuk memasukkan data umum ke tabel `bus`
+    // Query untuk memasukkan data umum ke tabel bus
     $query_bus = "INSERT INTO `bus` (`id_bus`, `no_reg_bus`, `tipe_bus`, `kelas_layanan`, `kapasitas`, `foto_armada`)
                   VALUES (NULL, '$no_reg_bus', '$tipe_bus', '$kelas_layanan', '$kapasitas', '$foto_armada')";
     mysqli_query($connect, $query_bus);
@@ -42,11 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
         $query_reguler = "INSERT INTO bus_reguler (id_bus, rute, harga_tiket) 
                           VALUES ('$id_bus', '$rute', '$harga_tiket')";
         mysqli_query($connect, $query_reguler);
+
     } else if($tipe_bus == 'rental'){
         // Query untuk tipe 'rental', memasukkan data ke tabel `bus_rental`
         $query_rental = "INSERT INTO bus_rental (id_bus, harga_sewa) 
                          VALUES ('$id_bus', '$harga_sewa')";
         mysqli_query($connect, $query_rental);
+
     } else {
         echo "Tipe bus tidak valid"; // Pesan jika tipe bus tidak valid
     }
@@ -55,7 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
     exit();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

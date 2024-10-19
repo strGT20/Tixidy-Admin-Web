@@ -20,7 +20,7 @@
   </button>
   <div class="collapse navbar-collapse" id="main_nav">
     <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" aria-current="page" href="admin-dashboard.php">Manajemen armada</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Manajemen armada</a></li>
     </ul>
         <a class="btn btn-warning" id="login_btn" href="logout.php">Logout</a>
   </div> 
