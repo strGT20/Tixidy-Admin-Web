@@ -20,11 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($row['is_admin']) {
                 // Jika pengguna adalah admin, arahkan ke dashboard admin
                 header("Location: index.php");
-            } else {
-                // Jika pengguna bukan admin, arahkan ke halaman utama
-                header("Location: index.php");
             }
-            exit;
         } else {
             echo "Kata sandi salah!";
         }

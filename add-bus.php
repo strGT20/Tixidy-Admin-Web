@@ -1,6 +1,8 @@
 <?php
-session_start(); // Memulai session
+session_start(); 
 include 'db-connect.php'; // Menghubungkan ke database
+include 'header.php';
+
 if (!isset($_SESSION['id_user'])) {
     header("Location: login.php");
     exit();
@@ -49,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
         echo "Tipe bus tidak valid"; // Pesan jika tipe bus tidak valid
     }
 
-    // Redirect ke halaman index.php setelah berhasil menyimpan data
     header("Location: index.php");
     exit();
 }
@@ -65,10 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
     <title>Tambah Bus</title>
 </head>
 <body>
+
 <div class="container">
     <h1>Tambah Bus Baru</h1>
     <form action="" method="post" enctype="multipart/form-data">
-        <!-- Dropdown Tipe Bus untuk pilih tipe bus -->
+        <!-- Dropdown untuk pilih tipe bus -->
         <div class="mb-3">
             <label for="tipe_bus" class="form-label">Tipe Bus</label>
             <select class="form-control" id="tipe_bus" name="tipe_bus" required onchange="this.form.submit()">
@@ -78,11 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
             </select>
         </div>
 
-        <!-- Bagian input umum -->
+        <!-- input umum -->
         <div class="mb-3">
             <label for="no_reg_bus" class="form-label">Nomor Registrasi Bus</label>
             <input type="text" class="form-control" id="no_reg_bus" name="no_reg_bus" required>
         </div>
+
         <div class="mb-3">
             <label for="kelas_layanan" class="form-label">Kelas Layanan</label>
             <select class="form-control" id="kelas_layanan" name="kelas_layanan" required>
@@ -94,10 +97,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
                 <option value="First Class">First Class</option>
             </select>
         </div>
+
         <div class="mb-3">
             <label for="kapasitas" class="form-label">Kapasitas</label>
             <input type="number" class="form-control" id="kapasitas" name="kapasitas" required>
         </div>
+
         <div class="mb-3">
             <label for="image" class="form-label">Foto Armada</label>
             <input type="file" class="form-control" id="image" name="image" required>
@@ -109,10 +114,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
                 <label for="rute" class="form-label">Rute (Reguler)</label>
                 <input type="text" class="form-control" id="rute" name="rute" required>
             </div>
+
             <div class="mb-3">
                 <label for="harga-tiket" class="form-label">Harga Tiket (Reguler)</label>
                 <input type="number" class="form-control" id="harga-tiket" name="harga-tiket" step="0.01" required>
             </div>
+
         <?php elseif ($tipe_bus == 'rental'): ?>
             <!-- Field tambahan untuk bus Rental -->
             <div class="mb-3">

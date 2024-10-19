@@ -7,11 +7,9 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/Logo1.svg" type="image/svg+xml">
-    <title>Tixify : Official Site</title>
 </head>
 <body>
 
-<!-- Bagian Navigation Bar -->
 <div class="navbar">
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar">
   <a class="navbar-brand" href="#">
@@ -22,16 +20,14 @@
   </button>
   <div class="collapse navbar-collapse" id="main_nav">
     <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Pelayanan</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Armada kami</a></li>
-        <li class="nav-item"><a class="nav-link" href="booking_history.php">Riwayat</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" href="admin-dashboard.php">Manajemen armada</a></li>
     </ul>
-        <a class="btn btn-warning" id="login_btn" href="login.php">AKUN</a>
+        <a class="btn btn-warning" id="login_btn" href="logout.php">Logout</a>
   </div> 
 </nav>
 </nav>
 </div> 
-     <br><br><br><br>
+     <br><br><br>
+     
 </body>
 </html>

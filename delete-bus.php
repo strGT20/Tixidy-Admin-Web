@@ -1,10 +1,5 @@
 <?php
-session_start();
 include 'db-connect.php';
-if (!isset($_SESSION['id_user'])) {
-    header("Location: login.php");
-    exit();
-}
 
 $bus_id = $_GET['id']; // Ambil ID bus dari URL
 

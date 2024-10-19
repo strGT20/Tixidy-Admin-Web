@@ -1,10 +1,12 @@
 <?php
 session_start();
-include 'db-connect.php';
+include 'header.php';
+
 if (!isset($_SESSION['id_user'])) {
     header("Location: login.php");
     exit();
 }
+include 'db-connect.php';
 
 // Ambil data bus dari database
 $query = "SELECT * FROM bus";
@@ -51,6 +53,8 @@ $result = mysqli_query($connect, $query);
 </div>
 </body>
 </html>
+
 <?php 
 include ('footer.php'); 
-mysqli_close($connect); ?>
+mysqli_close($connect); 
+?>
