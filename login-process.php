@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($row['is_admin']) {
                 // Jika pengguna adalah admin, arahkan ke dashboard admin
-                header("Location: index.php");
+                header("Location: home.php");
             }
         } else {
             echo "Kata sandi salah!";

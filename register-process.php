@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "INSERT INTO Users (nama, email, password) VALUES ('$nama', '$email', '$password')";
 
-    if (mysqli_query($connect, $sql)) {
+    if (mysqli_query($connect, $sql)) { 
         echo "Registrasi berhasil! <a href='login.php'>Login di sini</a>";
     } else { 
         echo "Error: " . $sql . "<br>" . mysqli_error($connect);

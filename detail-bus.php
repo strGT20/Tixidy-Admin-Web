@@ -19,6 +19,7 @@ if ($bus['tipe_bus'] == 'reguler') {
     $query_reguler = "SELECT * FROM bus_reguler WHERE id_bus = '$id_bus'";
     $result_reguler = mysqli_query($connect, $query_reguler);
     $detail_bus = mysqli_fetch_assoc($result_reguler);
+    
 } else if ($bus['tipe_bus'] == 'rental') {
     $query_rental = "SELECT * FROM bus_rental WHERE id_bus = '$id_bus'";
     $result_rental = mysqli_query($connect, $query_rental);

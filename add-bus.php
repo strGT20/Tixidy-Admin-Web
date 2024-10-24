@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-include 'db-connect.php'; // Menghubungkan ke database
+include 'db-connect.php';
 include 'header.php';
 
 if (!isset($_SESSION['id_user'])) {
@@ -18,13 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
     $kelas_layanan = $_POST['kelas_layanan'];
     $kapasitas = $_POST['kapasitas'];
     
-    // Ambil data tambahan berdasarkan tipe bus (reguler atau rental)
+    // Ambil data tambahan berdasarkan tipe
     $rute = $tipe_bus == 'reguler' ? $_POST['rute'] : null; //Ternary operator
     $harga_tiket = $tipe_bus == 'reguler' ? $_POST['harga-tiket'] : null;
     $harga_sewa = $tipe_bus == 'rental' ? $_POST['harga-sewa'] : null;
 
     // Bagian untuk meng-upload gambar
-    $directory = "images/"; // Direktori tujuan penyimpanan gambar
+    $directory = "images/";  // Direktori tujuan penyimpanan gambar
     $foto_armada = $directory . basename($_FILES["image"]["name"]); // Path gambar
     move_uploaded_file($_FILES["image"]["tmp_name"], $foto_armada); // Memindahkan file ke direktori
 
