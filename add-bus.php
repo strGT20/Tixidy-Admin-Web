@@ -1,5 +1,6 @@
 <?php
-session_start(); 
+session_start();
+global $connect;
 include 'db-connect.php';
 include 'header.php';
 
@@ -53,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
         echo "Tipe bus tidak valid"; // Pesan jika tipe bus tidak valid
     }
 
-    header("Location: index.php");
+    header("Location: home.php");
     exit();
 }
 ?>
@@ -71,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
 <div class="container">
     <h1>Tambah Bus Baru</h1>
     <form action="" method="post" enctype="multipart/form-data">
-        <!-- Dropdown untuk pilih tipe bus -->
+        <!-- Dropdown buat pilih tipe bus -->
         <div class="mb-3">
             <label for="tipe_bus" class="form-label">Tipe Bus</label>
             <select class="form-control" id="tipe_bus" name="tipe_bus" required onchange="this.form.submit()">

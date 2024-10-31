@@ -1,4 +1,5 @@
 <?php
+global $connect;
 include 'db-connect.php';
 include 'header.php';
 
@@ -19,7 +20,7 @@ if ($bus['tipe_bus'] == 'reguler') {
     $query_reguler = "SELECT * FROM bus_reguler WHERE id_bus = '$id_bus'";
     $result_reguler = mysqli_query($connect, $query_reguler);
     $detail_bus = mysqli_fetch_assoc($result_reguler);
-    
+
 } else if ($bus['tipe_bus'] == 'rental') {
     $query_rental = "SELECT * FROM bus_rental WHERE id_bus = '$id_bus'";
     $result_rental = mysqli_query($connect, $query_rental);
@@ -50,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         mysqli_query($connect, $up_rent);
     }
 
-    header('Location: index.php');
+    header('Location: home.php');
     exit();
 }
 ?>

@@ -1,4 +1,5 @@
 <?php
+global $connect;
 include 'db-connect.php';
 
 $bus_id = $_GET['id']; // Ambil ID bus dari URL
@@ -14,6 +15,5 @@ $query = "DELETE FROM Bus WHERE id_bus = $bus_id";
 mysqli_query($connect, $query);
 
 // Redirect setelah delete
-header("Location: index.php");
+header("Location: home.php");
 exit();
-?>
